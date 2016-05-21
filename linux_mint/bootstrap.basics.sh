@@ -13,3 +13,6 @@ sudo easy_install trash-cli
 ## Install vim
 sudo apt-get install vim
 
+## Install alarm-clock-applet
+sudo apt-get install alarm-clock-applet
+
