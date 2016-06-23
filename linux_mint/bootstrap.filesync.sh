@@ -27,6 +27,8 @@ sudo ln -s /home/vakimov/dotfiles/linux_mint/syncthing/syncthing.conf /etc/init/
 sudo initctl reload-configuration
 sudo initctl start syncthing
 
+# ln -s /home/vakimov/dotfiles/linux_mint/syncthing/SyncThing.desktop /home/vakimov/.config/autostart/SyncThing.desktop
+
 # Not for linux mint with upstart (not systemd)
 # https://docs.syncthing.net/users/autostart.html#how-to-set-up-a-user-service
 #mkdir -p ~/.config/systemd/user/

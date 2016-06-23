@@ -1,0 +1,9 @@
+ktop Entry]
+Type=Application
+Exec=/usr/bin/syncthing -no-browser -home="/home/vakimov/.config/syncthing"
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_US]=SyncThing
+Comment[en_US]=cannot start with upstart
+X-GNOME-Autostart-Delay=0
