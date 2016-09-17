@@ -24,3 +24,8 @@ RESET_F_COLOR="\[\e[39m\]"
 RESET_B_COLOR="\[\e[49m\]"
 PS1="${RESET}${BOLD}\u ${F_MAGNETA}\w ${F_RED}\$(parse_git_branch)${RESET_F_COLOR} $ ${RESET}"
 #PS1="\[\033[01;32m\]\u \[\033[01;34m\]\w\[\e[36;1m\]\[\033[31m\] \$(parse_git_branch)\[\033[01;34m\] $ \[\e[0m\]"
+
+# Local customized path and environment settings, etc.
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
