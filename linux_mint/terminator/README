@@ -1,0 +1,2 @@
+Add script to sync changes to ~/.config/terminator/config
+Rename config.ln to config_global
