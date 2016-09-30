@@ -26,6 +26,6 @@ PS1="${RESET}${BOLD}\u ${F_MAGNETA}\w ${F_RED}\$(parse_git_branch)${RESET_F_COLO
 #PS1="\[\033[01;32m\]\u \[\033[01;34m\]\w\[\e[36;1m\]\[\033[31m\] \$(parse_git_branch)\[\033[01;34m\] $ \[\e[0m\]"
 
 # Local customized path and environment settings, etc.
-if [ -f ~/.bash_local ]; then
-    . ~/.bash_local
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local
 fi
