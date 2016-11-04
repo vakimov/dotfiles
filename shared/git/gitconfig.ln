@@ -16,3 +16,5 @@
   rebase = true
 [diff]
   external = ~/dotfiles/shared/git/meld_diff.py
+[merge]
+  tool = meld
