@@ -11,6 +11,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 function parse_git_branch () {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
+
 RESET="\[\e[0m\]"
 BOLD="\[\e[1m\]"
 RESET_ATTRIBUTES="\[\e[20m\]"
@@ -22,8 +23,41 @@ F_MAGNETA="\[\e[35m\]"
 F_YELLO="\[\e[33m\]"
 RESET_F_COLOR="\[\e[39m\]"
 RESET_B_COLOR="\[\e[49m\]"
+
+
 PS1="${RESET}${BOLD}\u ${F_MAGNETA}\w ${F_RED}\$(parse_git_branch)${RESET_F_COLOR} $ ${RESET}"
 #PS1="\[\033[01;32m\]\u \[\033[01;34m\]\w\[\e[36;1m\]\[\033[31m\] \$(parse_git_branch)\[\033[01;34m\] $ \[\e[0m\]"
+
+# Custom pyenv prompt
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+pyenvVirtualenvUpdatePrompt() {
+    RED='\[\e[0;31m\]'
+    GREEN='\[\e[0;32m\]'
+    BLUE='\[\e[0;34m\]'
+    RESET='\[\e[0m\]'
+    [ -z "$PYENV_VIRTUALENV_ORIGINAL_PS1" ] && export PYENV_VIRTUALENV_ORIGINAL_PS1="$PS1"
+    [ -z "$PYENV_VIRTUALENV_GLOBAL_NAME" ] && export PYENV_VIRTUALENV_GLOBAL_NAME="$(pyenv global)"
+    VENV_NAME="$(pyenv version-name)"
+    VENV_NAME="${VENV_NAME##*/}"
+    GLOBAL_NAME="$PYENV_VIRTUALENV_GLOBAL_NAME"
+
+    # non-global versions:
+    COLOR="$BLUE"
+    # global version:
+    [ "$VENV_NAME" == "$GLOBAL_NAME" ] && COLOR="$RED"
+    # virtual envs:
+    [ "${VIRTUAL_ENV##*/}" == "$VENV_NAME" ] && COLOR="$GREEN"
+
+    if [ -z "$COLOR" ]; then
+        PS1="$PYENV_VIRTUALENV_ORIGINAL_PS1"
+    else
+        PS1="($COLOR${VENV_NAME}$RESET)$PYENV_VIRTUALENV_ORIGINAL_PS1"
+    fi
+    export PS1
+}
+export PROMPT_COMMAND="$PROMPT_COMMAND pyenvVirtualenvUpdatePrompt;"
+
+
 
 # Local customized path and environment settings, etc.
 if [ -f ~/.bashrc_local ]; then
