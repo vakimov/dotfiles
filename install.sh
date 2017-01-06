@@ -8,4 +8,5 @@ DOTFILES_DIR = "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Symlinks
 
-ln -sfv "$DOTFILES_DIR/runcom/.bashrc" ~
+ln -sfv "$DOTFILES_DIR/runcom/bashrc" ~
+touch ~/.bashrc_local
