@@ -1,0 +1,12 @@
+<templateSet group="Python">
+  <template name="prnt" value="print('\n'*3);print($END$);print('\n'*3)  # TODO: remove" description="Noticable print for debuggint" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="utf8" value="# -*- coding: utf-8 -*-" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+</templateSet>

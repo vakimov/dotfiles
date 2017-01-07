@@ -1,0 +1,2 @@
+com.vladsch.idea.multimarkdown
+org.jetbrains.plugins.yaml
