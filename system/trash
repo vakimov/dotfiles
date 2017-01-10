@@ -1,0 +1,6 @@
+
+# Protect files from being deleted with rm
+
+alias rm='echo "This is not the command you are looking for. Use trash instead."; false'
+# if you really want to use rm, simply prepend slash to bypass the alias:
+# \rm file-without-hope
