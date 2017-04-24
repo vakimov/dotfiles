@@ -26,3 +26,4 @@ sudo apt-get install -y wget
 . $DOTFILES_DIR/install/keepass2.sh
 . $DOTFILES_DIR/install/pycharm.sh
 . $DOTFILES_DIR/install/trash-cli.sh
+sudo apt-get autoremove -y
