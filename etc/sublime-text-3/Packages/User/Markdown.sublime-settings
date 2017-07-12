@@ -1,0 +1,10 @@
+{
+	"extensions":
+	[
+		"md",
+		"mdown",
+		"txt",
+		"mdn"
+	],
+    "draw_centered": false,
+}

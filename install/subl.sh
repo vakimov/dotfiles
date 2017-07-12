@@ -12,4 +12,4 @@ sudo apt-get install -y sublime-text-installer
 
 config_path="sublime-text-3/Packages/User"
 mkdir --parents ~/.config/$config_path
-cp -f $DOTFILES_DIR/etc/$config_path/Preferences.sublime-settings ~/.config/$config_path
+cp -f $DOTFILES_DIR/etc/$config_path/* ~/.config/$config_path
