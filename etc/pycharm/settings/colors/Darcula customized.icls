@@ -1,7 +1,15 @@
 <scheme name="Darcula customized" version="142" parent_scheme="Darcula">
-  <option name="LINE_SPACING" value="1.0" />
-  <option name="EDITOR_FONT_SIZE" value="14" />
-  <option name="EDITOR_FONT_NAME" value="Source Code Pro" />
+  <option name="FONT_SCALE" value="1.0" />
+  <font>
+    <option name="EDITOR_FONT_NAME" value="Hasklig" />
+    <option name="EDITOR_FONT_SIZE" value="14" />
+  </font>
+  <font>
+    <option name="EDITOR_FONT_NAME" value="Source Code Pro" />
+    <option name="EDITOR_FONT_SIZE" value="14" />
+  </font>
+  <option name="EDITOR_LIGATURES" value="true" />
+  <option name="CONSOLE_FONT_NAME" value="Source Code Pro" />
   <attributes>
     <option name="MARKDOWN_NAVIGATOR.BOLD_ABBREVIATED_TEXT">
       <value>
