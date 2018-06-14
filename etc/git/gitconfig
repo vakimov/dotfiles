@@ -18,3 +18,5 @@
   external = ~/.dotfiles/etc/git/meld_diff.py
 [merge]
   tool = meld
+[core]
+  autocrlf = input
