@@ -7,6 +7,10 @@ if [ ! -d ~/.pyenv/plugins/pyenv-virtualenv ]; then
   git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv  
 fi
 
+if [ ! -d ~/.pyenv/plugins/pyenv-update ]; then
+  git clone git://github.com/pyenv/pyenv-update.git ~/.pyenv/plugins/pyenv-update
+fi
+
 
 # Fix common build problems
 
