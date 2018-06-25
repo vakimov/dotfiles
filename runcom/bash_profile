@@ -1,0 +1,47 @@
+
+# If not running interactively, don't do anything
+
+[ -z "$PS1" ] && return
+
+
+# Resolve DOTFILES_DIR (assuming ~/.dotfiles)
+
+if [ -d "$HOME/.dotfiles" ]; then
+  DOTFILES_DIR="$HOME/.dotfiles"
+else
+  echo "Unable to find dotfiles, exiting."
+  return # `exit 1` would quit the shell itself
+fi
+
+
+# Source the dotfiles (order matters)
+
+for DOTFILE in "$DOTFILES_DIR"/system/{env,color,alias,trash}; do
+  [ -f "$DOTFILE" ] && . "$DOTFILE"
+done
+
+
+# Colorise
+function parse_git_branch () {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+}
+
+RESET="\[\e[0m\]"
+BOLD="\[\e[1m\]"
+RESET_ATTRIBUTES="\[\e[20m\]"
+RESET_BOLD="\[\e[21m\]"
+F_GREEN="\[\e[32m\]"
+F_RED="\[\e[31m\]"
+F_CYAN="\[\e[36m\]"
+F_MAGNETA="\[\e[35m\]"
+F_YELLO="\[\e[33m\]"
+RESET_F_COLOR="\[\e[39m\]"
+RESET_B_COLOR="\[\e[49m\]"
+
+
+PS1="${RESET}${BOLD}\u ${F_MAGNETA}\w ${F_RED}\$(parse_git_branch)${RESET_F_COLOR}\n$ ${RESET}"
+
+
+# Set iTerm2 bash integration
+
+source ~/.iterm2_shell_integration.bash
