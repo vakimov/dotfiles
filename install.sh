@@ -16,11 +16,14 @@ if [ "$(uname)" == "Darwin" ]; then
     # Symlinks
 
     ln -sfv "$DOTFILES_DIR/runcom/bash_profile" ~/.bash_profile
+    ln -sfv "$DOTFILES_DIR/etc/git/gitconfig" ~/.gitconfig
+    ln -sfv "$DOTFILES_DIR/etc/git/gitignore_global" ~/.gitignore_global
 
     # Speed up key repeating
     defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
     defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
+    . $DOTFILES_DIR/install/mac/git.sh
     . $DOTFILES_DIR/install/mac/subl.sh
     . $DOTFILES_DIR/install/pyenv.sh
     . $DOTFILES_DIR/install/nvm.sh

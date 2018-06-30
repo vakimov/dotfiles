@@ -42,6 +42,13 @@ RESET_B_COLOR="\[\e[49m\]"
 PS1="${RESET}${BOLD}\u ${F_MAGNETA}\w ${F_RED}\$(parse_git_branch)${RESET_F_COLOR}\n$ ${RESET}"
 
 
+# Git auto-completion
+
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+  . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+fi
+
+
 # Set iTerm2 bash integration
 
 source ~/.iterm2_shell_integration.bash
