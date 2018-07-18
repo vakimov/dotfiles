@@ -46,7 +46,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     . $DOTFILES_DIR/install/dropbox.sh
     . $DOTFILES_DIR/install/keepass2.sh
     . $DOTFILES_DIR/install/pycharm.sh
-    . $DOTFILES_DIR/install/trash-cli.sh
+    . $DOTFILES_DIR/install/trashcli.sh
     . $DOTFILES_DIR/install/cinnamon/countdown.sh
     sudo apt-get autoremove -y
 
