@@ -1,8 +1,11 @@
 # Check if pyenv exists
 
 if [ ! -d ~/.pyenv ]; then
-  return # `exit 1` would quit the shell itself
+  return  # `exit 1` would quit the shell itself
 fi
+
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 
 # Define environment variable
@@ -16,9 +19,21 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+
+# Check if pipenv shell activated
+
+if [ "$PIPENV_ACTIVE" == "1" ]; then
+  _pyenv_virtualenv_hook() {
+    :  # echo "_pyenv_virtualenv_hook called"
+  }
+  pyenvVirtualenvUpdatePrompt() {
+    :  # echo "pyenvVirtualenvUpdatePrompt called"
+  }
+  return
+fi
+
 # Custom pyenv prompt
 
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 pyenvVirtualenvUpdatePrompt() {
     RED='\[\e[0;31m\]'
     GREEN='\[\e[0;32m\]'

@@ -15,7 +15,7 @@ fi
 
 # Source the dotfiles (order matters)
 
-for DOTFILE in "$DOTFILES_DIR"/system/{env,color,alias,trash,pyenv}; do
+for DOTFILE in "$DOTFILES_DIR"/system/{env,color,alias,trash,pyenv,pipenv}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
