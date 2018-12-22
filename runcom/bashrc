@@ -3,6 +3,10 @@
 [ -z "$PS1" ] && return
 
 
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$PATH:$HOME/.local/bin"
+fi
+
 # Resolve DOTFILES_DIR (assuming ~/.dotfiles)
 
 if [ -d "$HOME/.dotfiles" ]; then
@@ -15,7 +19,7 @@ fi
 
 # Source the dotfiles (order matters)
 
-for DOTFILE in "$DOTFILES_DIR"/system/{env,color,alias,trash,pyenv,pipenv}; do
+for DOTFILE in "$DOTFILES_DIR"/system/{env,color,alias,trash,pyenv,pipenv,nvm}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 

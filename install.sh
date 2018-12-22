@@ -22,6 +22,8 @@ if [ "$(uname)" == "Darwin" ]; then
     defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
     . $DOTFILES_DIR/install/mac/subl.sh
+    . $DOTFILES_DIR/install/pyenv.sh
+    . $DOTFILES_DIR/install/nvm.sh
 
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
@@ -41,6 +43,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     . $DOTFILES_DIR/install/git.sh
     . $DOTFILES_DIR/install/terminator.sh
     . $DOTFILES_DIR/install/pyenv.sh
+    . $DOTFILES_DIR/install/nvm.sh
     . $DOTFILES_DIR/install/subl.sh
     . $DOTFILES_DIR/install/chrome.sh
     . $DOTFILES_DIR/install/dropbox.sh
