@@ -1,3 +1,4 @@
+# gitconfig_base
 [branch]
   autosetuprebase = always
 [alias]
@@ -10,8 +11,8 @@
   dump = cat-file -p
 [push]
   default = simple
-[include]
-  path = ~/.gitconfig.local
+[user]
+  name = Victor Akimov
 [pull]
   rebase = true
 [diff]
