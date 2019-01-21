@@ -1,3 +1,5 @@
+# bashrc_base
+
 # If not running interactively, don't do anything
 
 [ -z "$PS1" ] && return
@@ -7,7 +9,7 @@ if [ -d "$HOME/.local/bin" ]; then
   PATH="$PATH:$HOME/.local/bin"
 fi
 
-# Resolve DOTFILES_DIR (assuming ~/.dotfiles)
+# Resolve DOTFILES_DIR (assuming $HOME/.dotfiles)
 
 if [ -d "$HOME/.dotfiles" ]; then
   DOTFILES_DIR="$HOME/.dotfiles"
@@ -44,10 +46,3 @@ RESET_B_COLOR="\[\e[49m\]"
 
 PS1="${RESET}${BOLD}\u ${F_MAGNETA}\w ${F_RED}\$(parse_git_branch)${RESET_F_COLOR}\n$ ${RESET}"
 #PS1="\[\033[01;32m\]\u \[\033[01;34m\]\w\[\e[36;1m\]\[\033[31m\] \$(parse_git_branch)\[\033[01;34m\] $ \[\e[0m\]"
-
-
-# Local customized path and environment settings, etc.
-
-if [ -f ~/.bashrc_local ]; then
-    . ~/.bashrc_local
-fi
