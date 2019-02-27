@@ -15,8 +15,6 @@
   name = Victor Akimov
 [pull]
   rebase = true
-[diff]
-  external = ~/.dotfiles/etc/git/meld_diff.py
 [merge]
   tool = meld
 [core]
