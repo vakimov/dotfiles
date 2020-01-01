@@ -71,6 +71,8 @@ elif [[ $(expr substr $(uname -s) 1 5) == "Linux" ]]; then
 
     try_add_base_bash_config bashrc
 
+    try_add_base_bash_config profile
+
     try_add_git_config
 
 
@@ -93,6 +95,7 @@ elif [[ $(expr substr $(uname -s) 1 5) == "Linux" ]]; then
     . $DOTFILES_DIR/install/pycharm.sh
     . $DOTFILES_DIR/install/trashcli.sh
     . $DOTFILES_DIR/install/docker.sh
+    . $DOTFILES_DIR/install/fzf.sh
     . $DOTFILES_DIR/install/cinnamon/countdown.sh
     sudo apt-get autoremove -y
 
