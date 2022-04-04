@@ -59,9 +59,9 @@ if [[ $(uname) == "Darwin" ]]; then
 
     . $DOTFILES_DIR/install/mac/git.sh
     . $DOTFILES_DIR/install/mac/subl.sh
-    . $DOTFILES_DIR/install/mac/pyenv.sh
-    . $DOTFILES_DIR/install/nvm.sh
-    . $DOTFILES_DIR/install/go.sh
+    # . $DOTFILES_DIR/install/mac/pyenv.sh
+    # . $DOTFILES_DIR/install/nvm.sh
+    # . $DOTFILES_DIR/install/go.sh
 
 
 elif [[ $(expr substr $(uname -s) 1 5) == "Linux" ]]; then

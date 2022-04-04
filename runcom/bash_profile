@@ -23,6 +23,10 @@ done
 
 
 # Colorise
+function parse_arc_branch () {
+    arc branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+}
+
 function parse_git_branch () {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
@@ -40,7 +44,7 @@ RESET_F_COLOR="\[\e[39m\]"
 RESET_B_COLOR="\[\e[49m\]"
 
 
-PS1="${RESET}${BOLD}\u ${F_MAGNETA}\w ${F_RED}\$(parse_git_branch)${RESET_F_COLOR}\n$ ${RESET}"
+PS1="${RESET}${BOLD}\u ${F_MAGNETA}\w ${F_RED}\$(parse_git_branch)\$(parse_arc_branch)${RESET_F_COLOR}\n$ ${RESET}"
 
 
 # Git auto-completion
@@ -52,4 +56,4 @@ fi
 
 # Set iTerm2 bash integration
 
-source $HOME/.iterm2_shell_integration.bash
+#source $HOME/.iterm2_shell_integration.bash

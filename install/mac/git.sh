@@ -4,7 +4,7 @@
 brew install git && brew install bash-completion
 
 # locate xcode utilities
-sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+# sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 
 # Disable notification "file is not ASCII"
 defaults write "com.apple.FileMerge" maxNonAscii -int 2147483647
